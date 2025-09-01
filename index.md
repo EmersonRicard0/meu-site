@@ -6,9 +6,10 @@ hero:
   text: "Analista de Redes & NOC"
   tagline: Transformo desafios de infraestrutura em redes seguras, eficientes e de alta disponibilidade, com foco em monitoramento proativo e otimização de performance.
   image:
-    src: /perfil.jpg # Certifique-se de que este caminho está correto para o seu logo circular
+    src: /perfil.jpg # Mude para a sua foto se for diferente
     alt: Emerson Silva Ricardo
-    class: circular-image # Adicionamos esta classe para o estilo
+    # Adicionamos a classe 'circular-image' para aplicar o estilo
+    class: circular-image 
   actions:
     - theme: brand
       text: Ver Currículo
@@ -27,12 +28,14 @@ features:
 ---
 
 <style>
-/* Estilo para a imagem circular no cabeçalho */
-.VPHero .circular-image {
-  border-radius: 50%; /* Torna a imagem circular */
-  width: 200px; /* Defina o tamanho que preferir */
-  height: 200px; /* Certifique-se de que a altura é igual à largura para um círculo perfeito */
-  object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
-  border: 3px solid var(--vp-c-brand-1); /* Borda opcional com a cor principal do tema */
+/* Selecionamos a imagem dentro da seção hero que tem a nossa classe.
+  Isso garante que o estilo só se aplique a esta imagem.
+*/
+.VPHero .image-src.circular-image {
+  border-radius: 50%; /* A mágica que torna a imagem circular */
+  width: 220px;       /* Defina o tamanho que preferir */
+  height: 220px;      /* Mantenha a altura e largura iguais para um círculo perfeito */
+  object-fit: cover;  /* Garante que a imagem preencha o círculo sem distorcer */
+  border: 3px solid var(--vp-c-brand-1); /* Borda opcional com a cor principal do seu tema */
 }
 </style>
