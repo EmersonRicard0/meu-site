@@ -1,11 +1,6 @@
-/* Estilos personalizados */
+/* .vitepress/theme/custom.css */
 
-/* Deixa a imagem do herói redonda */
-.VPHero .image-container .image-src {
-  border-radius: 50%;
-  border: 3px solid var(--vp-c-brand-2);
-}
-
+/* Define a cor principal da sua marca pessoal */
 :root {
   --vp-c-brand-1: #3498db; /* Cor principal (botões, links, destaques) */
   --vp-c-brand-2: #2e86c1; /* Cor para quando o mouse passa por cima */
@@ -17,4 +12,39 @@
   --vp-c-brand-1: #3498db;
   --vp-c-brand-2: #5dade2;
   --vp-c-brand-3: #2e86c1;
+}
+
+/*
+ * EFEITO DE MENU TRANSLÚCIDO (VIDRO FOSCO)
+ * Aplica o estilo apenas quando a página é rolada para baixo.
+*/
+
+/* --- MODO CLARO --- */
+.VPNav.is-scrolled .VPNavBar {
+  /* Fundo branco com 85% de opacidade */
+  background-color: rgba(255, 255, 255, 0.85);
+
+  /* Efeito de desfoque no conteúdo que está atrás do menu */
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+
+  /* Adiciona uma linha subtil na parte inferior para separar do conteúdo */
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+/* --- MODO ESCURO --- */
+.dark .VPNav.is-scrolled .VPNavBar {
+  /* Fundo preto com 75% de opacidade */
+  background-color: rgba(27, 27, 31, 0.75);
+}
+
+/*
+ * Estilo para deixar a imagem do cabeçalho da página inicial circular
+*/
+.VPHero .image-src.hero-image-circle {
+  border-radius: 50%; /* A propriedade que torna a imagem circular */
+  width: 220px;       /* Defina a largura que preferir */
+  height: 220px;      /* Mantenha a altura e largura iguais para um círculo perfeito */
+  object-fit: cover;  /* Garante que a imagem preencha o círculo sem distorcer */
+  border: 3px solid var(--vp-c-brand-1); /* Borda opcional com a cor principal do seu tema */
 }

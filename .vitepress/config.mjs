@@ -16,7 +16,8 @@ export default defineConfig({
     nav: [
       { text: 'Início', link: '/' },
       { text: 'Currículo', link: '/curriculo' },
-      { text: 'Documentação', link: '/docs/guias-instalacao/instalando-servico-x' }, // Link para a nova seção
+      // Atualizado para apontar para o primeiro guia real
+      { text: 'Documentação', link: '/docs/guias-instalacao/instalando-zabbix' },
       { text: 'Contato', link: '/contato' }
     ],
 
@@ -26,7 +27,7 @@ export default defineConfig({
       { icon: 'linkedin', link: 'https://www.linkedin.com/in/emerson-silva-ricardo-543308119/' }
     ],
 
-    // --- CONFIGURAÇÃO DO MENU LATERAL (SIDEBAR) PARA A DOCUMENTAÇÃO ---
+    // --- CONFIGURAÇÃO DO MENU LATERAL (SIDEBAR) ATUALIZADA ---
     sidebar: {
       // Esta sidebar só irá aparecer em páginas dentro da pasta /docs/
       '/docs/': [
@@ -34,19 +35,22 @@ export default defineConfig({
           text: 'Guias de Instalação',
           collapsible: true, // Permite que a seção seja expandida/recolhida
           items: [
-            // Seus manuais vão aqui. O link deve corresponder ao caminho do arquivo.
-            { text: 'Instalando Serviço X', link: '/docs/guias-instalacao/instalando-servico-x' },
-            // { text: 'Instalando Serviço Y', link: '/docs/guias-instalacao/instalando-servico-y' },
+            // Links para os manuais que criamos
+            { text: 'Instalando Zabbix 6.0', link: '/docs/guias-instalacao/instalando-zabbix' },
+            { text: 'Backup com Rclone', link: '/docs/guias-instalacao/backup-com-rclone' },
           ]
-        },
+        }
+        // Se quiser adicionar uma nova seção no futuro, como "Conceitos",
+        // basta criar um novo bloco como este aqui.
+        /*
         {
           text: 'Conceitos Gerais',
           collapsible: true,
           items: [
-            // Exemplo de outra seção para o futuro
             // { text: 'Arquitetura de Rede', link: '/docs/conceitos/arquitetura-rede' },
           ]
         }
+        */
       ]
     }
   }
