@@ -6,7 +6,7 @@ hero:
   text: "Analista de Redes & NOC"
   tagline: Transformo desafios de infraestrutura em redes seguras, eficientes e de alta disponibilidade, com foco em monitoramento proativo e otimização de performance.
   image:
-    src: /img/logo.png
+    src: img/logo.png
     alt: Emerson Silva Ricardo
   actions:
     - theme: brand
