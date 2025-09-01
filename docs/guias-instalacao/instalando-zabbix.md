@@ -1,22 +1,97 @@
-# Instalação do Zabbix 6.0 LTS no Debian 11
+# Guia de Instalação do Zabbix 7.4 LTS no Ubuntu 24.04
 
-Este guia detalha o processo de instalação do Zabbix Server, Frontend e Agent na versão 6.0 LTS sobre o sistema operacional Debian 11.
+::: info
+Este manual detalha o processo completo para instalar e configurar o Zabbix Server, Frontend e Agent na versão 7.4 LTS, utilizando Apache e MySQL no Ubuntu 24.04.
+:::
 
-## Pré-requisitos
-- Um servidor com Debian 11 (Bullseye) instalado.
-- Acesso root ou um usuário com privilégios sudo.
-- Banco de dados (MySQL/PostgreSQL) e servidor web (Apache/Nginx) pré-instalados.
+## 1. Tornar-se Utilizador Root
 
-## Passo 1: Adicionar o Repositório Zabbix
-
-Primeiro, precisamos adicionar o repositório oficial do Zabbix para instalar os pacotes.
+Para executar os comandos de instalação, inicie uma sessão de shell com privilégios de root.
 
 ```bash
-# Baixar o pacote de configuração do repositório
-wget [https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-4+debian11_all.deb](https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-4+debian11_all.deb)
+sudo -s
+2. Instalar o Repositório Zabbix
+Primeiro, adicione o repositório oficial do Zabbix para ter acesso aos pacotes de instalação.
 
-# Instalar o pacote
-sudo dpkg -i zabbix-release_6.0-4+debian11_all.deb
+Bash
 
-# Atualizar a lista de pacotes
-sudo apt update
+# Descarregar o pacote de configuração do repositório
+wget [https://repo.zabbix.com/zabbix/7.4/release/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.4+ubuntu24.04_all.deb](https://repo.zabbix.com/zabbix/7.4/release/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.4+ubuntu24.04_all.deb)
+
+# Instalar o pacote .deb
+dpkg -i zabbix-release_latest_7.4+ubuntu24.04_all.deb
+
+# Atualizar a lista de pacotes do sistema
+apt update
+3. Instalar os Componentes do Zabbix
+Instale o Zabbix Server, o Frontend (interface web), o Agent e os scripts SQL para MySQL.
+
+Bash
+
+apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent
+4. Criar e Popular a Base de Dados
+::: tip Pré-requisito
+Certifique-se de que o seu servidor de base de dados MySQL está instalado e em execução antes de continuar.
+:::
+
+Aceda ao MySQL como utilizador root:
+
+Bash
+
+mysql -uroot -p
+(Ser-lhe-á pedida a sua senha de root do MySQL)
+
+Execute os seguintes comandos SQL para criar a base de dados, o utilizador e atribuir as permissões.
+
+::: danger Segurança
+Substitua 'password' por uma senha forte e segura para o utilizador zabbix da base de dados.
+:::
+
+SQL
+
+create database zabbix character set utf8mb4 collate utf8mb4_bin;
+create user zabbix@localhost identified by 'password';
+grant all privileges on zabbix.* to zabbix@localhost;
+set global log_bin_trust_function_creators = 1;
+quit;
+Importe o schema inicial do Zabbix. O sistema irá pedir a senha do utilizador zabbix que você acabou de criar.
+
+Bash
+
+zcat /usr/share/zabbix/sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -uzabbix -p zabbix
+Desative a opção log_bin_trust_function_creators por segurança, agora que a importação está concluída.
+
+Bash
+
+mysql -uroot -p
+SQL
+
+set global log_bin_trust_function_creators = 0;
+quit;
+5. Configurar a Base de Dados para o Servidor Zabbix
+Edite o ficheiro de configuração do Zabbix para que ele saiba como se conectar à base de dados.
+
+Abra o ficheiro de configuração:
+
+Bash
+
+nano /etc/zabbix/zabbix_server.conf
+Procure pela linha DBPassword= e adicione a senha que você criou no passo anterior.
+
+Snippet de código
+
+DBPassword=password
+Salve e feche o ficheiro.
+
+6. Iniciar os Serviços do Zabbix
+Inicie os processos do Zabbix Server, Agent e Apache, e habilite-os para que arranquem automaticamente com o sistema.
+
+Bash
+
+systemctl restart zabbix-server zabbix-agent apache2
+systemctl enable zabbix-server zabbix-agent apache2
+7. Aceder à Interface Web do Zabbix
+Parabéns! A instalação está concluída. Agora pode aceder à interface web do Zabbix para finalizar a configuração.
+
+Abra o seu navegador e aceda ao seguinte endereço:
+http://ip_do_seu_servidor/zabbix

@@ -36,7 +36,7 @@ export default defineConfig({
           collapsible: true, // Permite que a seção seja expandida/recolhida
           items: [
             // Links para os manuais que criamos
-            { text: 'Instalando Zabbix 6.0', link: '/docs/guias-instalacao/instalando-zabbix' },
+            { text: 'Instalando Zabbix 7.4', link: '/docs/guias-instalacao/instalando-zabbix' },
             { text: 'Backup com Rclone', link: '/docs/guias-instalacao/backup-com-rclone' },
           ]
         }
