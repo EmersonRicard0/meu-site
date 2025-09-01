@@ -95,3 +95,4 @@ Parabéns! A instalação está concluída. Agora pode aceder à interface web d
 
 Abra o seu navegador e aceda ao seguinte endereço:
 http://ip_do_seu_servidor/zabbix
+
