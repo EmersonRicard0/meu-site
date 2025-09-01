@@ -1,28 +1,26 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  // Define o nome que aparece no canto superior esquerdo do site
+  // Título do site (aparece no canto superior esquerdo)
   title: 'Emerson Silva Ricardo',
   description: 'Analista de Redes / NOC - Portfólio Profissional',
 
   themeConfig: {
-    // Configurações do tema
-
-    // Itens do menu de navegação no topo
+    // Itens do menu de navegação
     nav: [
       { text: 'Início', link: '/' },
       { text: 'Currículo', link: '/curriculo' },
       { text: 'Contato', link: '/contato' }
-    ],
+    ], // <-- Vírgula importante aqui
 
-    // Ícones de redes sociais no topo
+    // Ícones de redes sociais
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/EmersonRicard0' }, // Lembre-se de verificar se este é o link correto do seu GitHub
+      { icon: 'github', link: 'https://github.com/EmersonRicard0' },
       { icon: 'linkedin', link: 'https://www.linkedin.com/in/emerson-silva-ricardo-543308119/' }
-    ],
+    ]
   },
   
-  // Configura o ícone que aparece na aba do navegador (favicon)
+  // Ícone da aba do navegador
   head: [
     ['link', { rel: 'icon', href: '/img/logo.png' }]
   ]
