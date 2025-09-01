@@ -1,0 +1,20 @@
+/* Estilos personalizados */
+
+/* Deixa a imagem do herói redonda */
+.VPHero .image-container .image-src {
+  border-radius: 50%;
+  border: 3px solid var(--vp-c-brand-2);
+}
+
+:root {
+  --vp-c-brand-1: #3498db; /* Cor principal (botões, links, destaques) */
+  --vp-c-brand-2: #2e86c1; /* Cor para quando o mouse passa por cima */
+  --vp-c-brand-3: #2874a6; /* Cor para quando o link é clicado */
+}
+
+/* Garante que o tema escuro também use a nova cor */
+.dark {
+  --vp-c-brand-1: #3498db;
+  --vp-c-brand-2: #5dade2;
+  --vp-c-brand-3: #2e86c1;
+}
