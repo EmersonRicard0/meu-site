@@ -103,3 +103,4 @@ Parabéns! A instalação está concluída. Agora pode aceder à interface web d
 
 Abra o seu navegador e aceda ao seguinte endereço, substituindo ip_do_seu_servidor pelo IP real da sua máquina:
 http://ip_do_seu_servidor/zabbix
+
