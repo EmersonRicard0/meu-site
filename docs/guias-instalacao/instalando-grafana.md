@@ -43,13 +43,13 @@ sudo apt-get update
 ```
 ## 5. Instalar Grafana
 Para instalar o Grafana OSS:
-# Installs the latest OSS release:
+### Installs the latest OSS release:
 ```bash
 sudo apt-get install grafana
 ```
 Para instalar o Grafana Enterprise:
 
-# Installs the latest Enterprise release:
+### Installs the latest Enterprise release:
 ```bash
 sudo apt-get install grafana-enterprise
 ```

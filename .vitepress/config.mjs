@@ -4,6 +4,9 @@ export default defineConfig({
   title: 'Emerson Silva Ricardo',
   description: 'Portfólio e Documentação Técnica',
 
+  // Adicionado para ativar a data de "Última Atualização"
+  lastUpdated: true,
+
   head: [
     ['link', { rel: 'icon', href: '/img/logo.png' }]
   ],
@@ -12,6 +15,7 @@ export default defineConfig({
     nav: [
       { text: 'Início', link: '/' },
       { text: 'Sobre Mim ', link: '/curriculo' }, // Nome mais descritivo
+      { text: 'Projetos', link: '/projetos/' }, // NOVO LINK AQUI
       { text: 'Documentação', link: '/docs/guias-instalacao/instalando-zabbix' },
       { text: 'Contato', link: '/contato' }
     ],
@@ -33,6 +37,11 @@ export default defineConfig({
           ]
         }
       ]
+    },
+
+    // Adicionado para ativar a barra de pesquisa local
+    search: {
+      provider: 'local'
     }
   }
 })
