@@ -27,8 +27,7 @@ export default defineConfig({
           text: 'Guias de Instalação',
           collapsible: true,
           items: [
-            { text: 'Instalando Zabbix 7.4', link: '/docs/guias-instalacao/instalando-zabbix-7' },
-            { text: 'Instalando Zabbix 6.0', link: '/docs/guias-instalacao/instalando-zabbix' },
+            { text: 'Instalando Zabbix 7.4', link: '/docs/guias-instalacao/instalando-zabbix' },
             { text: 'Backup com Rclone', link: '/docs/guias-instalacao/backup-com-rclone' },
           ]
         }
