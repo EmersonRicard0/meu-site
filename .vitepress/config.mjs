@@ -29,6 +29,7 @@ export default defineConfig({
           items: [
             { text: 'Instalando Zabbix 7.4', link: '/docs/guias-instalacao/instalando-zabbix' },
             { text: 'Backup com Rclone', link: '/docs/guias-instalacao/backup-com-rclone' },
+            { text: 'Backup com Grafana', link: '/docs/guias-instalacao/instalando-grafana' },
           ]
         }
       ]
