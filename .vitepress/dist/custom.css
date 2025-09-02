@@ -25,8 +25,8 @@
   background-color: rgba(27, 27, 31, 0.75);
 }
 
-/* Estilo para a imagem circular da página inicial */
-.VPHero .image-src.hero-image-circle {
+/* Estilo para a imagem circular da página inicial com o seletor CORRETO */
+.is-home .VPHero .image-src {
   border-radius: 50%;
   width: 220px;
   height: 220px;
