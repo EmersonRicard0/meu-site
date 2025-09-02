@@ -1,106 +1,231 @@
 /* .vitepress/theme/custom.css */
 
-/* --- CORES PRINCIPAIS DO TEMA --- */
+/* --- VARIÁVEIS CSS ORGANIZADAS --- */
 :root {
+  /* Cores principais */
   --vp-c-brand-1: #3498db;
   --vp-c-brand-2: #2e86c1;
   --vp-c-brand-3: #2874a6;
+  
+  /* Transições */
+  --transition-slow: 0.4s ease;
+  --transition-normal: 0.3s ease;
+  --transition-fast: 0.2s ease;
+  
+  /* Bordas */
+  --border-radius-sm: 6px;
+  --border-radius-md: 10px;
+  --border-radius-lg: 16px;
+  
+  /* Sombras */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
+
 .dark {
   --vp-c-brand-1: #3498db;
   --vp-c-brand-2: #5dade2;
   --vp-c-brand-3: #2e86c1;
 }
 
-/* --- FUNDO GRADIENTE PARA O SITE --- */
+/* --- FUNDO GRADIENTE MELHORADO --- */
 :root {
-  background-image: linear-gradient(to top, #eef2f3 0%, #8e9eab 100%);
+  background-image: linear-gradient(120deg, #eef2f3 0%, #dce6eb 100%);
   background-attachment: fixed;
+  min-height: 100vh;
 }
-.dark:root {
-  background-image: linear-gradient(to top left, #434343 0%, black 100%);
+
+.dark {
+  background-image: linear-gradient(to bottom, #0d1117 0%, #161b22 100%);
 }
+
 .VPApp {
   background: transparent;
 }
 
-/* --- EFEITO GLASSMORPHISM (VIDRO FOSCO) --- */
-
-/* 1. Efeito no Menu Superior Translúcido */
+/* --- NAVBAR SUPERIOR COM GLASSMORPHISM MELHORADO --- */
 .VPNav.is-scrolled .VPNavBar {
-  background-color: rgba(255, 255, 255, 0.85);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--vp-c-divider);
+  background-color: rgba(255, 255, 255, 0.82) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.88);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
 }
+
 .dark .VPNav.is-scrolled .VPNavBar {
-  background-color: rgba(27, 27, 31, 0.75);
+  background-color: rgba(22, 27, 34, 0.82) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* 2. Efeito no Menu Lateral (Sidebar) */
+/* --- SIDEBAR COM EFEITO DE VIDRO MAIS SUAVE --- */
 .VPSidebar {
-  background-color: rgba(249, 249, 249, 0.65);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  background-color: rgba(249, 249, 249, 0.7);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
 }
+
 .dark .VPSidebar {
-  background-color: rgba(32, 32, 35, 0.75);
+  background-color: rgba(22, 27, 34, 0.75);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* 3. Efeito nos "Cards" do site */
-/* MODO CLARO */
+/* --- CARDS COM DESIGN MAIS REFINADO --- */
 .VPCard, .VPFeatures .item {
-  background-color: transparent;
-  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(128, 128, 128, 0.2);
-  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.65);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--border-radius-md);
+  transition: all var(--transition-normal);
+  overflow: hidden;
 }
 
-/* MODO ESCURO */
+.VPCard::before, .VPFeatures .item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.8) 50%, 
+    rgba(255, 255, 255, 0) 100%);
+}
+
 .dark .VPCard, .dark .VPFeatures .item {
-  background-image: linear-gradient(to bottom right, rgba(40, 40, 40, 0.7), rgba(40, 40, 40, 0.4));
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+  background: rgba(33, 39, 49, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.2);
 }
 
+.dark .VPCard::before, .dark .VPFeatures .item::before {
+  background: linear-gradient(90deg, 
+    rgba(52, 152, 219, 0) 0%, 
+    rgba(52, 152, 219, 0.3) 50%, 
+    rgba(52, 152, 219, 0) 100%);
+}
 
-/* --- EFEITO FLUTUANTE AO PASSAR O RATO (HOVER) --- */
-
+/* --- EFEITO HOVER MELHORADO --- */
 .VPCard:hover, .VPFeatures .item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: var(--shadow-lg);
   border-color: var(--vp-c-brand-1);
 }
 
 .dark .VPCard:hover, .dark .VPFeatures .item:hover {
-  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
   border-color: var(--vp-c-brand-2);
 }
 
+/* --- BOTÕES COM EFEITO MELHORADO --- */
+.VPButton {
+  transition: all var(--transition-normal) !important;
+  border-radius: var(--border-radius-sm) !important;
+}
 
-/* --- ESTILO PARA IMAGEM CIRCULAR NA PÁGINA INICIAL --- */
+.VPButton.medium {
+  border-radius: var(--border-radius-sm) !important;
+}
+
+.VPButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(52, 152, 219, 0.25);
+}
+
+/* --- IMAGEM DE PERFIL NA HOME --- */
 .is-home .VPHero .VPImage.image-src {
   border-radius: 50% !important;
   width: 220px !important;
   height: 220px !important;
   object-fit: cover !important;
   border: 3px solid var(--vp-c-brand-1) !important;
+  box-shadow: 0 8px 30px rgba(52, 152, 219, 0.3);
+  transition: all var(--transition-slow);
 }
 
+.is-home .VPHero .VPImage.image-src:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 40px rgba(52, 152, 219, 0.4);
+}
 
-/* --- AJUSTE DE ESPAÇAMENTO DOS CARDS (VERSÃO CORRIGIDA) --- */
-
-/* Seletor específico para os cards da PÁGINA INICIAL (features) */
+/* --- ESPAÇAMENTO E LAYOUT --- */
 .VPHome .VPFeatures .items {
   gap: 32px;
 }
 
-/* Seletor para os cards nas OUTRAS PÁGINAS (projetos, currículo) */
 .grid.cards {
   gap: 24px;
+}
+
+/* --- TIPOGRAFIA MELHORADA --- */
+h1, h2, h3, h4, h5, h6 {
+  transition: color var(--transition-normal);
+}
+
+/* --- LINKS COM EFEITO SUAVE --- */
+a {
+  transition: color var(--transition-fast);
+}
+
+/* --- SCROLLBAR PERSONALIZADA --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-brand-2);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* --- RESPONSIVIDADE MELHORADA --- */
+@media (max-width: 768px) {
+  .VPSidebar {
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
+  
+  .VPFeatures .items {
+    gap: 24px !important;
+  }
+  
+  .grid.cards {
+    gap: 16px !important;
+  }
+}
+
+/* --- ANIMAÇÃO SUAVE PARA ELEMENTOS AO ROLAR A PÁGINA --- */
+@media (prefers-reduced-motion: no-preference) {
+  .VPCard, .VPFeatures .item {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Delay para os cards */
+  .VPFeatures .item:nth-child(1) { animation-delay: 0.1s; }
+  .VPFeatures .item:nth-child(2) { animation-delay: 0.2s; }
+  .VPFeatures .item:nth-child(3) { animation-delay: 0.3s; }
+  .VPFeatures .item:nth-child(4) { animation-delay: 0.4s; }
+  .VPFeatures .item:nth-child(5) { animation-delay: 0.5s; }
+  .VPFeatures .item:nth-child(6) { animation-delay: 0.6s; }
 }
