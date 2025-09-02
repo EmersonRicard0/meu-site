@@ -15,12 +15,10 @@ Uma coleção de estudos de caso e projetos detalhados que demonstram minhas hab
   ---
   Um estudo de caso sobre a reestruturação completa de uma rede Wi-Fi para melhorar a performance e a cobertura.
   <br>
-  [**Ver detalhes →**](/projetos/otimizacao-rede)
 
 - #### Monitoramento com Grafana & Zabbix
   ---
   Implementação de uma solução de monitoramento integrado para garantir a alta disponibilidade de redes e ativos.
   <br>
-  [**Ver detalhes →**](/projetos/monitoramento-grafana-zabbix)
 
 </div>
