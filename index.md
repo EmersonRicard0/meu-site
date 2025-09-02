@@ -17,10 +17,10 @@ hero:
       link: /contato
 
 features:
-  - title: 🚀 Perfil Orientado a Resultados
+  - title: Perfil Orientado a Resultados
     details: Foco em entregar soluções que não apenas funcionam, mas que otimizam processos e garantem a continuidade do negócio, buscando sempre a máxima performance e segurança da rede.
-  - title: 🔧 Experiência Prática e Impacto
+  - title:  Experiência Prática e Impacto
     details: Liderança em instalações e suporte de infraestrutura de rede para dezenas de clientes, reduzindo em até 30% os chamados de suporte através de monitoramento proativo e otimizações.
-  - title: 📈 Objetivo de Carreira
+  - title:  Objetivo de Carreira
     details: Busco continuamente projetos desafiadores em Redes e Segurança, onde eu possa aplicar minha experiência para construir infraestruturas resilientes e expandir meus conhecimentos.
 ---
