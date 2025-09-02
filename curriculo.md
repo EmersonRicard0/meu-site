@@ -45,6 +45,20 @@ Apaixonado por tecnologia, estou sempre em busca de novos conhecimentos e desafi
 
 ## Detalhes Técnicos e Formação
 
+<div class="about-me">
+<p>
+Profissional de Redes com 7 anos de experiência consolidada em ambiente de Provedor de Internet (ISP). Iniciei minha trajetória como técnico de campo e, por meio de dedicação e aprimoramento contínuo, evoluí para a posição de Analista de Redes. Essa jornada me proporcionou uma visão completa do negócio, desde a ponta do cliente até o core da rede.
+</p>
+<p>
+Possuo expertise em suporte técnico avançado, configuração de equipamentos (switches, roteadores, OLTs) e troubleshooting complexo de conectividade. Minha atuação diária envolve garantir a estabilidade, o desempenho e a segurança da infraestrutura de rede.
+</p>
+<p>
+Apaixonado por tecnologia, estou sempre em busca de novos conhecimentos e desafios que me permitam aprofundar minha especialização em redes.
+</p>
+</div>
+
+## Detalhes Técnicos e Formação
+
 <div class="grid cards" markdown>
 
 -   #### Experiência Técnica
@@ -74,7 +88,6 @@ Apaixonado por tecnologia, estou sempre em busca de novos conhecimentos e desafi
     - **Espanhol**: Intermediário (leitura e compreensão)
 
 </div>
-
 ---
 
 ## Visualização do Currículo

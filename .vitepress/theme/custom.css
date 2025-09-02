@@ -25,11 +25,14 @@
   background-color: rgba(27, 27, 31, 0.75);
 }
 
-/* Estilo para a imagem circular da página inicial com o seletor CORRETO */
-.is-home .VPHero .image-src {
-  border-radius: 50%;
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border: 3px solid var(--vp-c-brand-1);
+/*
+ * Estilo para a imagem circular da página inicial (VERSÃO CORRETA E FORTE)
+ * Este seletor aplica-se diretamente à imagem do cabeçalho na página inicial.
+*/
+.is-home .VPHero .VPImage.image-src {
+  border-radius: 50% !important; /* O !important força este estilo a ser aplicado */
+  width: 220px !important;
+  height: 220px !important;
+  object-fit: cover !important;
+  border: 3px solid var(--vp-c-brand-1) !important;
 }
