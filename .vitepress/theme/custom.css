@@ -1,38 +1,106 @@
 /* .vitepress/theme/custom.css */
 
-/* Define a cor principal da sua marca pessoal */
+/* --- CORES PRINCIPAIS DO TEMA --- */
 :root {
   --vp-c-brand-1: #3498db;
   --vp-c-brand-2: #2e86c1;
   --vp-c-brand-3: #2874a6;
 }
-
 .dark {
   --vp-c-brand-1: #3498db;
   --vp-c-brand-2: #5dade2;
   --vp-c-brand-3: #2e86c1;
 }
 
-/* Efeito de menu translúcido */
+/* --- FUNDO GRADIENTE PARA O SITE --- */
+:root {
+  background-image: linear-gradient(to top, #eef2f3 0%, #8e9eab 100%);
+  background-attachment: fixed;
+}
+.dark:root {
+  background-image: linear-gradient(to top left, #434343 0%, black 100%);
+}
+.VPApp {
+  background: transparent;
+}
+
+/* --- EFEITO GLASSMORPHISM (VIDRO FOSCO) --- */
+
+/* 1. Efeito no Menu Superior Translúcido */
 .VPNav.is-scrolled .VPNavBar {
   background-color: rgba(255, 255, 255, 0.85);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--vp-c-divider);
 }
-
 .dark .VPNav.is-scrolled .VPNavBar {
   background-color: rgba(27, 27, 31, 0.75);
 }
 
-/*
- * Estilo para a imagem circular da página inicial (VERSÃO CORRETA E FORTE)
- * Este seletor aplica-se diretamente à imagem do cabeçalho na página inicial.
-*/
+/* 2. Efeito no Menu Lateral (Sidebar) */
+.VPSidebar {
+  background-color: rgba(249, 249, 249, 0.65);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.dark .VPSidebar {
+  background-color: rgba(32, 32, 35, 0.75);
+}
+
+/* 3. Efeito nos "Cards" do site */
+/* MODO CLARO */
+.VPCard, .VPFeatures .item {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* MODO ESCURO */
+.dark .VPCard, .dark .VPFeatures .item {
+  background-image: linear-gradient(to bottom right, rgba(40, 40, 40, 0.7), rgba(40, 40, 40, 0.4));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+
+/* --- EFEITO FLUTUANTE AO PASSAR O RATO (HOVER) --- */
+
+.VPCard:hover, .VPFeatures .item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.15);
+  border-color: var(--vp-c-brand-1);
+}
+
+.dark .VPCard:hover, .dark .VPFeatures .item:hover {
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.25);
+  border-color: var(--vp-c-brand-2);
+}
+
+
+/* --- ESTILO PARA IMAGEM CIRCULAR NA PÁGINA INICIAL --- */
 .is-home .VPHero .VPImage.image-src {
-  border-radius: 50% !important; /* O !important força este estilo a ser aplicado */
+  border-radius: 50% !important;
   width: 220px !important;
   height: 220px !important;
   object-fit: cover !important;
   border: 3px solid var(--vp-c-brand-1) !important;
+}
+
+
+/* --- AJUSTE DE ESPAÇAMENTO DOS CARDS (VERSÃO CORRIGIDA) --- */
+
+/* Seletor específico para os cards da PÁGINA INICIAL (features) */
+.VPHome .VPFeatures .items {
+  gap: 32px;
+}
+
+/* Seletor para os cards nas OUTRAS PÁGINAS (projetos, currículo) */
+.grid.cards {
+  gap: 24px;
 }
