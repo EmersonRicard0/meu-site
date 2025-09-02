@@ -1,7 +1,7 @@
 # Guia de Instalação do Zabbix 7.4 LTS no Ubuntu 24.04
 
 ::: info
-Este manual detalha o processo completo para instalar e configurar o Zabbix Server, Frontend e Agent na versão 7.4 LTS, utilizando Apache e MySQL no Ubuntu 24.04.
+Este manual detalha o processo completo para instalar e configurar o Zabbix Server, o Frontend e o Agent na versão 7.4 LTS, utilizando Apache e MySQL no sistema operativo Ubuntu 24.04.
 :::
 
 ## 1. Tornar-se Utilizador Root
@@ -34,13 +34,11 @@ apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-sq
 Certifique-se de que o seu servidor de base de dados MySQL está instalado e em execução antes de continuar.
 :::
 
-Aceda ao MySQL como utilizador root:
+Aceda ao MySQL como utilizador root (ser-lhe-á pedida a sua senha de root do MySQL):
 
 Bash
 
 mysql -uroot -p
-(Ser-lhe-á pedida a sua senha de root do MySQL)
-
 Execute os seguintes comandos SQL para criar a base de dados, o utilizador e atribuir as permissões.
 
 ::: danger Segurança
@@ -93,6 +91,5 @@ systemctl enable zabbix-server zabbix-agent apache2
 7. Aceder à Interface Web do Zabbix
 Parabéns! A instalação está concluída. Agora pode aceder à interface web do Zabbix para finalizar a configuração.
 
-Abra o seu navegador e aceda ao seguinte endereço:
+Abra o seu navegador e aceda ao seguinte endereço, substituindo ip_do_seu_servidor pelo IP real da sua máquina:
 http://ip_do_seu_servidor/zabbix
-
