@@ -10,13 +10,15 @@ Para executar os comandos de instalação, inicie uma sessão de shell com privi
 
 ```bash
 sudo -s
-2. Instalar o Repositório Zabbix
-Primeiro, adicione o repositório oficial do Zabbix para ter acesso aos pacotes de instalação.
 ```
+## 2. Instalar o Repositório Zabbix
+Primeiro, adicione o repositório oficial do Zabbix para ter acesso aos pacotes de instalação.
+
 
 ## Descarregar o pacote de configuração do repositório
+```bash
 wget [https://repo.zabbix.com/zabbix/7.4/release/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.4+ubuntu24.04_all.deb](https://repo.zabbix.com/zabbix/7.4/release/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.4+ubuntu24.04_all.deb)
-
+```
 # Instalar o pacote .deb
 ```bash
 dpkg -i zabbix-release_latest_7.4+ubuntu24.04_all.deb

@@ -15,7 +15,7 @@ export default defineConfig({
     // Itens do menu de navegação no topo do site
     nav: [
       { text: 'Início', link: '/' },
-      { text: 'Currículo', link: '/curriculo' },
+      { text: 'Sobre Mim', link: '/curriculo' },
       // Atualizado para apontar para o primeiro guia real
       { text: 'Documentação', link: '/docs/guias-instalacao/instalando-zabbix' },
       { text: 'Contato', link: '/contato' }
