@@ -1,5 +1,11 @@
 // .vitepress/theme/index.js
 import DefaultTheme from 'vitepress/theme'
-import './custom.css' // Importa o nosso CSS personalizado de forma explícita
+import './custom.css'
+import './components/BackToTop.vue'
 
-export default DefaultTheme
+export default {
+  ...DefaultTheme,
+  enhanceApp({ app }) {
+    // Componentes personalizados podem ser registrados aqui
+  }
+}
