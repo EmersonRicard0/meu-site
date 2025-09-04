@@ -1,5 +1,5 @@
 export default {
-  title: 'Emerson Silva - Analista de Redes & NOC',
+  title: 'Emerson Silva Ricardo',
   description: 'Profissional de redes com 7 anos de experiência em ambiente de provedor de internet',
 
   head: [
@@ -16,7 +16,7 @@ export default {
   ],
   
   themeConfig: {
-    logo: '/perfil.jpg',
+    logo: '/logo.jpg',
     
     nav: [
       { text: 'Início', link: '/' },
