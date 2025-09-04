@@ -29,8 +29,9 @@ export default {
           { text: 'Backup com Rclone', link: '/docs/guias-instalacao/backup-com-rclone' }
         ]
       },
-      // --- LINK DE PROJETOS ATUALIZADO AQUI ---
-      { text: 'Projetos', link: '/projetos/' }, // Aponta para a nova galeria
+      { text: 'Projetos', link: '/projetos/monitoramento-grafana-zabbix' },
+      // --- NOVO BOTÃO ADICIONADO AQUI ---
+      { text: 'Ferramentas', link: '/isptools' },
       { text: 'Contato', link: '/contato' }
     ],
     
