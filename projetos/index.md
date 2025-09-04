@@ -1,24 +1,19 @@
----
-title: Meus Projetos
-description: Uma coleção de estudos de caso e projetos detalhados que demonstram minhas habilidades em redes, monitoramento e segurança.
----
-
 # Meus Projetos
 
-<p class="tagline" style="font-size: 1.2rem; color: var(--vp-c-text-2);">
-Uma coleção de estudos de caso e projetos detalhados que demonstram minhas habilidades práticas na resolução de desafios de infraestrutura.
-</p>
+Aqui estão alguns dos projetos nos quais trabalhei, demonstrando a aplicação prática dos meus conhecimentos em redes, monitoramento e automação.
 
-<div class="grid cards" markdown style="margin-top: 32px;">
+<div class="grid-2 cards project-gallery" markdown>
 
-- #### Otimização de Rede Corporativa
-  ---
-  Um estudo de caso sobre a reestruturação completa de uma rede Wi-Fi para melhorar a performance e a cobertura.
-  <br>
+-   #### Monitoramento com Grafana e Zabbix
+    ---
+    **Descrição**: Implementação de uma solução de monitoramento centralizado para garantir a alta disponibilidade de redes e ativos, utilizando Zabbix e Grafana.
+    
+    [Ver detalhes do projeto →](/projetos/monitoramento-grafana-zabbix)
 
-- #### Monitoramento com Grafana & Zabbix
-  ---
-  Implementação de uma solução de monitoramento integrado para garantir a alta disponibilidade de redes e ativos.
-  <br>
+-   #### Futuro Projeto Incrível (Exemplo)
+    ---
+    **Descrição**: Este é um exemplo para mostrar como os cards ficam lado a lado. Você pode duplicar este formato para adicionar seus novos projetos.
+
+    [Link para o projeto →](/)
 
 </div>

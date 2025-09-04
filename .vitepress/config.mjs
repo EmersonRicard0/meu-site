@@ -1,47 +1,56 @@
-import { defineConfig } from 'vitepress'
-
-export default defineConfig({
-  title: 'Emerson Silva Ricardo',
-  description: 'Portfólio e Documentação Técnica',
-
-  // Adicionado para ativar a data de "Última Atualização"
-  lastUpdated: true,
+export default {
+  title: 'Emerson Silva - Analista de Redes & NOC',
+  description: 'Profissional de redes com 7 anos de experiência em ambiente de provedor de internet',
 
   head: [
-    ['link', { rel: 'icon', href: '/img/logo.png' }]
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
+        integrity: 'sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==',
+        crossorigin: 'anonymous',
+        referrerpolicy: 'no-referrer'
+      }
+    ]
   ],
-
+  
   themeConfig: {
+    logo: '/perfil.jpg',
+    
     nav: [
       { text: 'Início', link: '/' },
-      { text: 'Sobre Mim ', link: '/curriculo' }, // Nome mais descritivo
-      { text: 'Projetos', link: '/projetos/' }, // NOVO LINK AQUI
-      { text: 'Documentação', link: '/docs/guias-instalacao/instalando-zabbix' },
+      { text: 'Currículo', link: '/curriculo' },
+      {
+        text: 'Documentação',
+        items: [
+          { text: 'Instalando Zabbix 7.4', link: '/docs/guias-instalacao/instalando-zabbix' },
+          { text: 'Instalando Grafana', link: '/docs/guias-instalacao/instalando-grafana' },
+          { text: 'Backup com Rclone', link: '/docs/guias-instalacao/backup-com-rclone' }
+        ]
+      },
+      // --- LINK DE PROJETOS ATUALIZADO AQUI ---
+      { text: 'Projetos', link: '/projetos/' }, // Aponta para a nova galeria
       { text: 'Contato', link: '/contato' }
     ],
-
+    
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/EmersonRicard0' },
-      { icon: 'linkedin', link: 'https://www.linkedin.com/in/emerson-silva-ricardo-543308119/' }
+      { icon: 'github', link: 'https://github.com/seu-usuario' },
+      { icon: 'linkedin', link: 'https://linkedin.com/in/seu-perfil' }
     ],
 
     sidebar: {
       '/docs/': [
         {
           text: 'Guias de Instalação',
-          collapsible: true,
+          collapsed: false,
           items: [
             { text: 'Instalando Zabbix 7.4', link: '/docs/guias-instalacao/instalando-zabbix' },
-            { text: 'Backup com Rclone', link: '/docs/guias-instalacao/backup-com-rclone' },
-            { text: 'Backup com Grafana', link: '/docs/guias-instalacao/instalando-grafana' },
+            { text: 'Instalando Grafana', link: '/docs/guias-instalacao/instalando-grafana' },
+            { text: 'Backup com Rclone', link: '/docs/guias-instalacao/backup-com-rclone' }
           ]
         }
       ]
-    },
-
-    // Adicionado para ativar a barra de pesquisa local
-    search: {
-      provider: 'local'
     }
   }
-})
+}
